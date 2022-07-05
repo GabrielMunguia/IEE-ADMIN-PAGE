@@ -11399,9 +11399,9 @@ input[type="button"].btn-block {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #191c24;
+  background-color: white;
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
+  border: 3px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem; }
   .card > hr {
     margin-right: 0;
@@ -16928,7 +16928,7 @@ code {
   font-weight: normal;
   font-size: 0.875rem;
   padding: 0.625rem 0.6875rem;
-  background-color: #2A3038;
+  background-color: aliceblue;
   border-radius: 2px;
  }
   .form-control:focus, .asColorPicker-input:focus, .dataTables_wrapper select:focus, .jsgrid .jsgrid-table .jsgrid-filter-row input:focus[type=text],
@@ -20195,11 +20195,11 @@ div.tagsinput {
 /* === Landing screens === */
 /* Auth */
 .auth.login-bg {
-  background: url("../images/auth/Login_bg.jpg");
+  background: url("../images/auth/fondoblanco.jpg");
   background-size: cover; }
 
 .auth .login-half-bg {
-  background: url("../images/auth/login-bg.jpg");
+  background: url("../images/auth/fondoblanco.jpg");
   background-size: cover; }
 
 .auth.register-half-bg {
