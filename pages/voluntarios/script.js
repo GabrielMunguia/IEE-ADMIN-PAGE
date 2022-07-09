@@ -101,11 +101,20 @@ const handleSubmit = async (e) => {
       }
     }
     let response = null;
+       //get jwt token from localStorage
+       const token = localStorage.getItem("token");
+         
+
     if (idVoluntario) {
       try {
         response = await axios.put(
           `https://iee-uso.herokuapp.com/api/voluntarios/${idVoluntario}`,
-          formData
+          formData,
+          {
+            headers: {
+              'x-token': token,
+            }
+          }
         );
       } catch (error) {
         throw error;
@@ -114,7 +123,12 @@ const handleSubmit = async (e) => {
       try {
         response = await axios.post(
           "https://iee-uso.herokuapp.com/api/voluntarios",
-          formData
+          formData,
+          {
+            headers: {
+              'x-token': token,
+            }
+          }
         );
       } catch (error) {
         throw error;
