@@ -481,11 +481,16 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../../helpers/validarSession.js"></script>
     <script>
       const tabla_voluntarios = document.getElementById("tabla_voluntarios");
 
       document.addEventListener("DOMContentLoaded", function () {
-
+        const sesionValida=validarSession();
+ 
+ if(!sesionValida){
+   window.location.href = "../../index.html";
+ }
         cargar_voluntarios();
       });
       const cargar_voluntarios = async () => {
@@ -540,8 +545,17 @@
         });
 
         if (seEliminara.isConfirmed) {
+          //get jwt token from localStorage
+          const token = localStorage.getItem("token");
+         
+
           const resp = await axios.delete(
-            `https://iee-uso.herokuapp.com/api/voluntarios/${id}`
+            `https://iee-uso.herokuapp.com/api/voluntarios/${id}`,
+            {
+              headers: {
+                "x-token": token,
+              },
+            }
           );
           const data = resp.data;
 

@@ -10,12 +10,26 @@ let correoOriginal = 0;
 let codigoOriginal = 0;
 let idVoluntario = null;
 document.addEventListener("DOMContentLoaded", () => {
+  const sesionValida=validarSession();
+ 
+  if(!sesionValida){
+    window.location.href = "../../index.html";
+  }
   getCapitulos();
   getGrados();
   validarEditar();
 });
 
-
+const btnLogout = document.querySelector('#btnLogout');
+     
+btnLogout.addEventListener('click', function() {
+  logout();
+});
+const logout=()=>{
+  console.log('click')
+  localStorage.removeItem('token');
+  window.location.href = '/login.html';
+}
 
 const getCapitulos = async () => {
   const response = await axios.get(
