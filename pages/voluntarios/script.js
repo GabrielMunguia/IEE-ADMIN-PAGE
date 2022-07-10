@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const sesionValida=validarSession();
  
   if(!sesionValida){
-    window.location.href = "../../index.html";
+    window.location.href = "./login.html";
   }
   getCapitulos();
   getGrados();
