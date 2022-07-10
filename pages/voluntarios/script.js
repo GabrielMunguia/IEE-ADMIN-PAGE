@@ -26,9 +26,10 @@ btnLogout.addEventListener('click', function() {
   logout();
 });
 const logout=()=>{
-  console.log('click')
+
   localStorage.removeItem('token');
-  window.location.href = 'login.html';
+  const url = window.location.origin+"/IEE-ADMIN-PAGE/login.html";
+  window.location.href = url;
 }
 
 const getCapitulos = async () => {
