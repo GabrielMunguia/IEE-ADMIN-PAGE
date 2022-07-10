@@ -489,7 +489,8 @@
         const sesionValida=validarSession();
  
  if(!sesionValida){
-   window.location.href = "../../index.html";
+  const url = window.location.origin+"/login.html";
+   window.location.href = url;
  }
         cargar_voluntarios();
       });

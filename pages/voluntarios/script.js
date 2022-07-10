@@ -28,7 +28,7 @@ btnLogout.addEventListener('click', function() {
 const logout=()=>{
   console.log('click')
   localStorage.removeItem('token');
-  window.location.href = './login.html';
+  window.location.href = 'login.html';
 }
 
 const getCapitulos = async () => {
