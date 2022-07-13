@@ -15156,7 +15156,7 @@ button.bg-dark:focus {
   font-style: italic !important; }
 
 .text-white {
-  color: black !important; }
+  color: white !important; }
 
 .text-primary, .list-wrapper .completed .remove {
   color: #0090e7 !important; }
@@ -16936,7 +16936,7 @@ code {
   .tt-query:focus,
   .tt-hint:focus {
     border: 1px solid rgba(71, 164, 71, 0.5);
-    background-color: #2A3038; }
+    background-color: #fff; }
   .form-control.form-control-lg, .form-control-lg.asColorPicker-input, .dataTables_wrapper select.form-control-lg, .jsgrid .jsgrid-table .jsgrid-filter-row input.form-control-lg[type=text],
   .jsgrid .jsgrid-table .jsgrid-filter-row select.form-control-lg, .jsgrid .jsgrid-table .jsgrid-filter-row input.form-control-lg[type=number], .select2-container--default .form-control-lg.select2-selection--single, .select2-container--default .select2-selection--single .form-control-lg.select2-search__field, .form-control-lg.typeahead,
   .form-control-lg.tt-query,
@@ -20195,8 +20195,9 @@ div.tagsinput {
 /* === Landing screens === */
 /* Auth */
 .auth.login-bg {
-  background: url("../images/auth/fondoblanco.jpg");
+  background: url("../images/Edificios.jpg");
   background-size: cover; }
+  
 
 .auth .login-half-bg {
   background: url("../images/auth/fondoblanco.jpg");

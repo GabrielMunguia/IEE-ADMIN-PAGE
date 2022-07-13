@@ -31,40 +31,49 @@
           <div
             class="content-wrapper full-page-wrapper d-flex align-items-center auth login-bg"
           >
-            <div class="card col-lg-4 mx-auto">
+            <div
+              class="card col-lg-4 mx-auto border-0 rounded shadow shadow-lg"
+            >
               <div class="card-body px-5 py-5">
-                <h3 class="card-title text-left mb-3">Inicio de sesión</h3>
+                <h3 class="card-title text-left mb-3 text-center mb-4">
+                  INICIO DE SESION
+                </h3>
                 <form id="formulario_sesion">
                   <div class="form-group">
                     <label>Usuario: *</label>
                     <input
                       type="text"
-                      class="form-control p_input"
+                      class="form-control rounded p_input"
                       id="usuario"
                       name="usuario"
+                      autocomplete="off"
                       required
                     />
                   </div>
                   <div class="form-group">
                     <label>Contraseña *</label>
                     <input
-                      type="text"
-                      class="form-control p_input"
+                      type="password"
+                      class="form-control p_input rounded"
                       id="password"
                       name="password"
                       required
+                      autocomplete="off"
                     />
                   </div>
+                  <label id="lblError" class="text-danger invisible"
+                    >Usuario/Contraseña invalidos</label
+                  >
                   <div
                     class="form-group d-flex align-items-center justify-content-between"
                   >
                     <div class="form-check">
                       <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" />
+                        <input id="recordarDatos" type="checkbox" class="form-check-input" />
                         Recuerdame
                       </label>
                     </div>
-                    <a href="#" class="forgot-pass">Contraseña olvidada</a>
+                    <a href="#"  class="forgot-pass text-danger">Recuperar contraseña</a>
                   </div>
                   <div class="text-center">
                     <button
@@ -73,18 +82,9 @@
                     >
                       Entrar
                     </button>
-                    <button
-                      type="reset"
-                      class="btn btn-danger btn-block enter-btn"
-                    >
-                      Cancelar
-                    </button>
                   </div>
                 </form>
               </div>
-            </div>
-            <div class="col-lg-4 mx-auto">
-              <img src="/assets/images/auth/" />
             </div>
           </div>
           <!-- content-wrapper ends -->
@@ -117,40 +117,62 @@
       const formulario_sesion = document.getElementById("formulario_sesion");
       const usuario = document.getElementById("usuario");
       const password = document.getElementById("password");
+      const recordarDatos = document.getElementById("recordarDatos");
 
       document.addEventListener("DOMContentLoaded", () => {
         const sesionValida = validarSession(false);
         console.log(sesionValida);
+        const datosGuardados = localStorage.getItem("recordarDatos");
+        if (datosGuardados) {
+          const datos = JSON.parse(datosGuardados);
+          usuario.value = datos.usuario;
+          password.value = datos.password;
+          recordarDatos.checked = true;
+        }
+
         if (sesionValida) {
           window.location.href = "./home.html";
         }
-
       });
 
-    
-
-      formulario_sesion.addEventListener("submit",async (e) => {
+      formulario_sesion.addEventListener("submit", async (e) => {
         e.preventDefault();
+        try {
+          var formData = new FormData(formulario_sesion);
 
-        var formData = new FormData(formulario_sesion);
+          var config = {
+            method: "post",
+            url: "https://iee-uso.herokuapp.com/api/usuarios/login",
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+            data: formData,
+          };
 
-        var config = {
-          method: "post",
-          url: "https://iee-uso.herokuapp.com/api/usuarios/login",
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-          data: formData,
-        };
+          const resp = await axios(config);
+          const data = resp.data;
 
-       const resp = await axios(config);
-       const data =resp.data;
-  
-       if(data.token){
-         localStorage.setItem("token", data.token);
-         window.location.href = "./home.html";
-      }
-     
+          if (data.token) {
+            localStorage.setItem("token", data.token);
+            localStorage.setItem(
+              "usuario",
+              JSON.stringify({
+                ...data.usuario,
+                token: data.voluntario,
+              })
+            );
+
+            recordarDatos.checked ? localStorage.setItem("recordarDatos", JSON.stringify({
+              usuario: usuario.value,
+              password: password.value,
+        
+            })) : localStorage.removeItem("recordarDatos");
+            window.location.href = "./home.html";
+          }
+        } catch (error) {
+       
+          document.getElementById("lblError").classList.remove("invisible");
+        }
       });
     </script>
   </body>

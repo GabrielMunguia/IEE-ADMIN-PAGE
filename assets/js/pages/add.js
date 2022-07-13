@@ -28,8 +28,8 @@ btnLogout.addEventListener('click', function() {
 const logout=()=>{
 
   localStorage.removeItem('token');
-  const url = window.location.origin+"/IEE-ADMIN-PAGE/login.html";
-  window.location.href = url;
+ 
+  window.location.href = "login.html";
 }
 
 const getCapitulos = async () => {
