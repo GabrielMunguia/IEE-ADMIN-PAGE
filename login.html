@@ -3,16 +3,10 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Corona Admin</title>
     <!-- plugins:css -->
-    <link
-      rel="stylesheet"
-      href="./assets/vendors/mdi/css/materialdesignicons.min.css"
-    />
+    <link rel="stylesheet" href="./assets/vendors/mdi/css/materialdesignicons.min.css" />
     <link rel="stylesheet" href="./assets/vendors/css/vendor.bundle.base.css" />
     <!-- endinject -->
     <!-- Plugin css for this page -->
@@ -28,60 +22,31 @@
     <div class="container-scroller">
       <div class="container-fluid page-body-wrapper full-page-wrapper">
         <div class="row w-100 m-0">
-          <div
-            class="content-wrapper full-page-wrapper d-flex align-items-center auth login-bg"
-          >
-            <div
-              class="card col-lg-4 mx-auto border-0 rounded shadow shadow-lg"
-            >
+          <div class="content-wrapper full-page-wrapper d-flex align-items-center auth login-bg">
+            <div class="card col-lg-4 mx-auto border-0 rounded shadow shadow-lg">
               <div class="card-body px-5 py-5">
-                <h3 class="card-title text-left mb-3 text-center mb-4">
-                  INICIO DE SESION
-                </h3>
+                <h3 class="card-title text-left mb-3 text-center mb-4">INICIO DE SESION</h3>
                 <form id="formulario_sesion">
                   <div class="form-group">
                     <label>Usuario: *</label>
-                    <input
-                      type="text"
-                      class="form-control rounded p_input"
-                      id="usuario"
-                      name="usuario"
-                      autocomplete="off"
-                      required
-                    />
+                    <input type="text" class="form-control rounded p_input" id="usuario" name="usuario" autocomplete="off" required />
                   </div>
                   <div class="form-group">
                     <label>Contraseña *</label>
-                    <input
-                      type="password"
-                      class="form-control p_input rounded"
-                      id="password"
-                      name="password"
-                      required
-                      autocomplete="off"
-                    />
+                    <input type="password" class="form-control p_input rounded" id="password" name="password" required autocomplete="off" />
                   </div>
-                  <label id="lblError" class="text-danger invisible"
-                    >Usuario/Contraseña invalidos</label
-                  >
-                  <div
-                    class="form-group d-flex align-items-center justify-content-between"
-                  >
+                  <label id="lblError" class="text-danger invisible">Usuario/Contraseña invalidos</label>
+                  <div class="form-group d-flex align-items-center justify-content-between">
                     <div class="form-check">
                       <label class="form-check-label">
                         <input id="recordarDatos" type="checkbox" class="form-check-input" />
                         Recuerdame
                       </label>
                     </div>
-                    <a href="#"  class="forgot-pass text-danger">Recuperar contraseña</a>
+                    <a href="#" class="forgot-pass text-danger">Recuperar contraseña</a>
                   </div>
                   <div class="text-center">
-                    <button
-                      type="submit"
-                      class="btn btn-primary btn-block enter-btn"
-                    >
-                      Entrar
-                    </button>
+                    <button type="submit" class="btn btn-primary btn-block enter-btn">Entrar</button>
                   </div>
                 </form>
               </div>
@@ -111,18 +76,19 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./helpers/validarSession.js"></script>
     <!-- endinject -->
     <script>
-      const formulario_sesion = document.getElementById("formulario_sesion");
-      const usuario = document.getElementById("usuario");
-      const password = document.getElementById("password");
-      const recordarDatos = document.getElementById("recordarDatos");
+      const formulario_sesion = document.getElementById('formulario_sesion');
+      const usuario = document.getElementById('usuario');
+      const password = document.getElementById('password');
+      const recordarDatos = document.getElementById('recordarDatos');
 
-      document.addEventListener("DOMContentLoaded", () => {
+      document.addEventListener('DOMContentLoaded', () => {
         const sesionValida = validarSession(false);
         console.log(sesionValida);
-        const datosGuardados = localStorage.getItem("recordarDatos");
+        const datosGuardados = localStorage.getItem('recordarDatos');
         if (datosGuardados) {
           const datos = JSON.parse(datosGuardados);
           usuario.value = datos.usuario;
@@ -131,20 +97,30 @@
         }
 
         if (sesionValida) {
-          window.location.href = "./home.html";
+          window.location.href = './home.html';
         }
       });
 
-      formulario_sesion.addEventListener("submit", async (e) => {
+      formulario_sesion.addEventListener('submit', async (e) => {
         e.preventDefault();
         try {
           var formData = new FormData(formulario_sesion);
+          Swal.fire({
+            title: 'Cargando...',
 
+            html: ` <div class="spinner-border m-3 text-primary" role="status">
+               <span class="visually-hidden"></span>
+               </div>`,
+
+            allowOutsideClick: false,
+
+            showConfirmButton: false,
+          });
           var config = {
-            method: "post",
-            url: "https://iee-uso.herokuapp.com/api/usuarios/login",
+            method: 'post',
+            url: 'https://iee-uso.herokuapp.com/api/usuarios/login',
             headers: {
-              "Content-Type": "multipart/form-data",
+              'Content-Type': 'multipart/form-data',
             },
             data: formData,
           };
@@ -153,25 +129,31 @@
           const data = resp.data;
 
           if (data.token) {
-            localStorage.setItem("token", data.token);
+            localStorage.setItem('token', data.token);
             localStorage.setItem(
-              "usuario",
+              'usuario',
               JSON.stringify({
                 ...data.usuario,
                 token: data.voluntario,
               })
             );
 
-            recordarDatos.checked ? localStorage.setItem("recordarDatos", JSON.stringify({
-              usuario: usuario.value,
-              password: password.value,
-        
-            })) : localStorage.removeItem("recordarDatos");
-            window.location.href = "./home.html";
+            recordarDatos.checked
+              ? localStorage.setItem(
+                  'recordarDatos',
+                  JSON.stringify({
+                    usuario: usuario.value,
+                    password: password.value,
+                  })
+                )
+              : localStorage.removeItem('recordarDatos');
+            //quitar swal
+            Swal.close();
+            window.location.href = './home.html';
           }
         } catch (error) {
-       
-          document.getElementById("lblError").classList.remove("invisible");
+          Swal.close();
+          document.getElementById('lblError').classList.remove('invisible');
         }
       });
     </script>
