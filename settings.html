@@ -1,374 +1,495 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <title>IEE USO</title>
-    <!-- plugins:css -->
-    <link
-      rel="stylesheet"
-      href="../../assets/vendors/mdi/css/materialdesignicons.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="../../assets/vendors/css/vendor.bundle.base.css"
-    />
-    <!-- endinject -->
-    <!-- Plugin css for this page -->
-    <!-- End Plugin css for this page -->
-    <!-- inject:css -->
-    <!-- endinject -->
-    <!-- Layout styles -->
-    <link rel="stylesheet" href="../../assets/css/style.css" />
-    <!-- End layout styles -->
-    <link rel="shortcut icon" href="../../assets/images/favicon.png" />
-  </head>
-  <body>
-    <div class="container-scroller">
-      <!-- partial:../../partials/_sidebar.html -->
-      <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <a class="sidebar-brand brand-logo" href="index.html"><img src="assets/images/logo.svg" alt="logo" /></a>
-          <a class="sidebar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>IEE USO</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css" />
+  <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css" />
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <!-- End Plugin css for this page -->
+  <!-- inject:css -->
+  <!-- endinject -->
+  <!-- Layout styles -->
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  <!-- End layout styles -->
+  <link rel="shortcut icon" href="../../assets/images/favicon.png" />
+</head>
+
+<body>
+  <div class="container-scroller">
+    <!-- partial:../../partials/_sidebar.html -->
+    <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+        <a class="sidebar-brand brand-logo" href="index.html"><img src="assets/images/logo.svg" alt="logo" /></a>
+        <a class="sidebar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
+      </div>
+      <ul class="nav">
+        <li class="nav-item profile">
+          <div class="profile-desc">
+            <div class="profile-pic">
+              <div class="count-indicator">
+                <img class="img-xs rounded-circle img_usuario "  src="https://w7.pngwing.com/pngs/841/727/png-transparent-computer-icons-user-profile-synonyms-and-antonyms-android-android-computer-wallpaper-monochrome-sphere.png" alt="">
+                <span class="count bg-success"></span>
+              </div>
+              <div class="profile-name">
+                <h5 class="mb-0 font-weight-normal text-white nombre_usuario">USUARIO</h5>
+                <span>Gold Member</span>
+              </div>
+            </div>
+            <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
+            <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">
+              <a href="#" class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-dark rounded-circle">
+                    <i class="mdi mdi-settings text-primary"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content">
+                  <p class="preview-subject ellipsis mb-1 text-small">Account settings</p>
+                </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-dark rounded-circle">
+                    <i class="mdi mdi-onepassword  text-info"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content">
+                  <p class="preview-subject ellipsis mb-1 text-small">Change Password</p>
+                </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-dark rounded-circle">
+                    <i class="mdi mdi-calendar-today text-success"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content">
+                  <p class="preview-subject ellipsis mb-1 text-small">To-do list</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item nav-category">
+          <span class="nav-link">Navigation</span>
+        </li>
+        <li class="nav-item menu-items">
+          <a class="nav-link" href="index.html">
+            <span class="menu-icon">
+              <i class="mdi mdi-speedometer"></i>
+            </span>
+            <span class="menu-title">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item menu-items">
+          <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+            <span class="menu-icon">
+              <i class="mdi mdi-laptop"></i>
+            </span>
+            <span class="menu-title">VOLUNTARIOS</span>
+            <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="ui-basic">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" href="list.html">VER VOLUNTARIO</a></li>
+              <li class="nav-item"> <a class="nav-link" href="add.html">AGREGAR VOLUNTARIO</a></li>
+            
+            </ul>
+          </div>
+        </li>
+
+
+        <li class="nav-item menu-items">
+          <a class="nav-link" data-toggle="collapse" href="#voluntarios" aria-expanded="false" aria-controls="ui-basic">
+            <span class="menu-icon">
+              <i class="mdi mdi-laptop"></i>
+            </span>
+            <span class="menu-title">USUARIOS</span>
+            <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="voluntarios">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" href="listUsers.html">VER USUARIOS</a></li>
+              <li class="nav-item"> <a class="nav-link" href="addUser.html">AGREGAR USUARIOS</a></li>
+            
+            </ul>
+          </div>
+        </li>
+
+
+        <li class="nav-item menu-items">
+          <a class="nav-link" data-toggle="collapse" href="#PROYECTOS" aria-expanded="false" aria-controls="ui-basic">
+            <span class="menu-icon">
+              <i class="mdi mdi-laptop"></i>
+            </span>
+            <span class="menu-title">EVENTOS</span>
+            <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="PROYECTOS">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" href="listProjects.html">VER EVENTOS</a></li>
+              <li class="nav-item"> <a class="nav-link" href="addProject.html">AGREGAR EVENTOS</a></li>
+            
+            </ul>
+          </div>
+        </li>
+       
+      </ul>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_navbar.html -->
+      <nav class="navbar p-0 fixed-top d-flex flex-row">
+        <div
+          class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center"
+        >
+          <a class="navbar-brand brand-logo-mini" href="./index.html"
+            ><img src="./assets/images/logo-mini.svg" alt="logo"
+          /></a>
         </div>
-        <ul class="nav">
-          <li class="nav-item profile">
-            <div class="profile-desc">
-              <div class="profile-pic">
-                <div class="count-indicator">
-                  <img class="img-xs rounded-circle img_usuario "  src="https://w7.pngwing.com/pngs/841/727/png-transparent-computer-icons-user-profile-synonyms-and-antonyms-android-android-computer-wallpaper-monochrome-sphere.png" alt="">
-                  <span class="count bg-success"></span>
-                </div>
-                <div class="profile-name">
-                  <h5 class="mb-0 font-weight-normal text-white nombre_usuario">USUARIO</h5>
-                  <span>Gold Member</span>
-                </div>
-              </div>
-              <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
-              <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">
-                <a href="#" class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-dark rounded-circle">
-                      <i class="mdi mdi-settings text-primary"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <p class="preview-subject ellipsis mb-1 text-small">Account settings</p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-dark rounded-circle">
-                      <i class="mdi mdi-onepassword  text-info"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <p class="preview-subject ellipsis mb-1 text-small">Change Password</p>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item preview-item">
-                  <div class="preview-thumbnail">
-                    <div class="preview-icon bg-dark rounded-circle">
-                      <i class="mdi mdi-calendar-today text-success"></i>
-                    </div>
-                  </div>
-                  <div class="preview-item-content">
-                    <p class="preview-subject ellipsis mb-1 text-small">To-do list</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </li>
-          <li class="nav-item nav-category">
-            <span class="nav-link">Navigation</span>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="index.html">
-              <span class="menu-icon">
-                <i class="mdi mdi-speedometer"></i>
-              </span>
-              <span class="menu-title">Dashboard</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <span class="menu-icon">
-                <i class="mdi mdi-laptop"></i>
-              </span>
-              <span class="menu-title">VOLUNTARIOS</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="list.html">VER VOLUNTARIO</a></li>
-                <li class="nav-item"> <a class="nav-link" href="add.html">AGREGAR VOLUNTARIO</a></li>
-              
-              </ul>
-            </div>
-          </li>
+        <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
+          <button
+            class="navbar-toggler navbar-toggler align-self-center"
+            type="button"
+            data-toggle="minimize"
+          >
+            <span class="mdi mdi-menu"></span>
+          </button>
+          <ul class="navbar-nav w-100">
+           
+          </ul>
+          <ul class="navbar-nav navbar-nav-right">
          
-        </ul>
+           
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link"
+                id="profileDropdown"
+                href="#"
+                data-toggle="dropdown"
+              >
+                <div class="navbar-profile">
+                  <img
+                    class="img-xs rounded-circle img_usuario"
+                    src="./assets/images/faces/face15.jpg"
+                    alt=""
+
+                  />
+                  <p  class="mb-0 d-none d-sm-block text-white nombre_usuario"  >
+                    
+                  </p>
+                  <i class="mdi mdi-menu-down d-none d-sm-block"></i>
+                </div>
+              </a>
+              <div
+                class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
+                aria-labelledby="profileDropdown"
+              >
+               
+                <div class="dropdown-divider"></div>
+                <a href="settings.html" class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-dark rounded-circle">
+                      <i class="mdi mdi-settings text-success"></i>
+                    </div>
+                  </div>
+                  <div class="preview-item-content">
+                    <p class="preview-subject mb-1">Configuracion</p>
+                  </div>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item preview-item" id="btnLogout">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-dark rounded-circle">
+                      <i class="mdi mdi-logout text-danger"></i>
+                    </div>
+                  </div>
+                  <div class="preview-item-content">
+                    <p class="preview-subject mb-1">Log out</p>
+                  </div>
+                </a>
+               
+            </li>
+          </ul>
+          <button
+            class="navbar-toggler navbar-toggler-right d-lg-none align-self-center"
+            type="button"
+            data-toggle="offcanvas"
+          >
+            <span class="mdi mdi-format-line-spacing"></span>
+          </button>
+        </div>
       </nav>
       <!-- partial -->
-      <div class="container-fluid page-body-wrapper">
-        <!-- partial:partials/_navbar.html -->
-        <nav class="navbar p-0 fixed-top d-flex flex-row">
-          <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-            <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
-          </div>
-          <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
-            <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-              <span class="mdi mdi-menu"></span>
-            </button>
-            <ul class="navbar-nav w-100">
-              <li class="nav-item w-100">
-                <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search">
-                  <input type="text" class="form-control" placeholder="Search products">
-                </form>
-              </li>
-            </ul>
-            <ul class="navbar-nav navbar-nav-right">
-              <li class="nav-item dropdown d-none d-lg-block">
-                <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" data-toggle="dropdown" aria-expanded="false" href="#">+ Create New Project</a>
-                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="createbuttonDropdown">
-                  <h6 class="p-3 mb-0">Projects</h6>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-file-outline text-primary"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject ellipsis mb-1">Software Development</p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-web text-info"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject ellipsis mb-1">UI Development</p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-layers text-danger"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject ellipsis mb-1">Software Testing</p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <p class="p-3 mb-0 text-center">See all projects</p>
-                </div>
-              </li>
-              <li class="nav-item nav-settings d-none d-lg-block">
-                <a class="nav-link" href="#">
-                  <i class="mdi mdi-view-grid"></i>
-                </a>
-              </li>
-              <li class="nav-item dropdown border-left">
-                <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                  <i class="mdi mdi-email"></i>
-                  <span class="count bg-success"></span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
-                  <h6 class="p-3 mb-0">Messages</h6>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <img src="assets/images/faces/face4.jpg" alt="image" class="rounded-circle profile-pic">
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject ellipsis mb-1">Mark send you a message</p>
-                      <p class="text-muted mb-0"> 1 Minutes ago </p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <img src="assets/images/faces/face2.jpg" alt="image" class="rounded-circle profile-pic">
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject ellipsis mb-1">Cregh send you a message</p>
-                      <p class="text-muted mb-0"> 15 Minutes ago </p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <img src="assets/images/faces/face3.jpg" alt="image" class="rounded-circle profile-pic">
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject ellipsis mb-1">Profile picture updated</p>
-                      <p class="text-muted mb-0"> 18 Minutes ago </p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <p class="p-3 mb-0 text-center">4 new messages</p>
-                </div>
-              </li>
-              <li class="nav-item dropdown border-left">
-                <a class="nav-link cargarDatosUsuariocount-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
-                  <i class="mdi mdi-bell"></i>
-                  <span class="count bg-danger"></span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-                  <h6 class="p-3 mb-0">Notifications</h6>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-calendar text-success"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject mb-1">Event today</p>
-                      <p class="text-muted ellipsis mb-0"> Just a reminder that you have an event today </p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-settings text-danger"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject mb-1">Settings</p>
-                      <p class="text-muted ellipsis mb-0"> Update dashboard </p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-link-variant text-warning"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject mb-1">Launch Admin</p>
-                      <p class="text-muted ellipsis mb-0"> New admin wow! </p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <p class="p-3 mb-0 text-center">See all notifications</p>
-                </div>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
-                  <div class="navbar-profile">
-                    <img class="img-xs rounded-circle img_usuario" src="https://w7.pngwing.com/pngs/841/727/png-transparent-computer-icons-user-profile-synonyms-and-antonyms-android-android-computer-wallpaper-monochrome-sphere.png" alt="">
-                    <p class="mb-0 d-none d-sm-block navbar-profile-name nombre_usuario text-white">Usuario</p>
-                    <i class="mdi mdi-menu-down d-none d-sm-block"></i>
-                  </div>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
-                  <h6 class="p-3 mb-0">Profile</h6>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-settings text-success"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject mb-1">Settings</p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item " id="btnLogout">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-logout text-danger"></i>
-                      </div>
-                    </div>
-                    <div  class="preview-item-content">
-                      <p class="preview-subject mb-1" >Log out</p>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <p class="p-3 mb-0 text-center">Advanced settings</p>
-                </div>
-              </li>
-            </ul>
-            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-              <span class="mdi mdi-format-line-spacing"></span>
-            </button>
-          </div>
-        </nav>
-        <!-- partial -->
-        <div class="main-panel bg-white">
-          <div class="content-wrapper bg-white  w-100 col-12">
-          
-            <div class="container shadow-lg py-4">
-              <div class="d-flex col-12  justify-content-end">
-                <button class="btn btn-primary p-2 d-none" id="btnActivarEdicion">Activar edicion</button>
-              </div>
-              <h1 class="text-dark text-center ">CONFIGURACIONES</h1>
-              <form class="row mt-2 mb-2" id="formulario_voluntarios">
-                <div class="col-sm-6 mt-2">
-                  <label class="mb-0 text-dark" name="nombres" for="nombre">Usuario :</label>
-                  <input type="text" class="form-control bg-light" id="nombres" placeholder="Escriba los nombres" required>
-                </div>
- 
-             
-                <div class="col-sm-6 mt-2">
-                  <label class="mb-0 text-dark" for="imagen" name="archivo">Imagen: </label>
-                  <input type="file" class="form-control bg-light" id="imagen" placeholder="Link de imagen">
-                </div>
-                 <div>
-                    <button class="btn btn-primary mt-4 mx-2 text-whitel, ">Cambiar  Contraseña</button>
-                 </div>
-              
+      <div class="main-panel bg-white">
+        <div class="content-wrapper bg-white  w-100 col-12">
 
-                <div class="col-12 mt-2 mb-2 d-flex justify-content-end">
-                  <button type="submit" class="btn btn-primary p-2 px-3 mt-4 mx-3" id="btnAgregar">Agregar</button>
-                  <button type="reset" class="btn btn-outline-primary p-2 px-3 mt-4" id="btnLimpiar">Limpiar</button>
-                </div>
-              </form>
+          <div class="container shadow-lg py-4">
+            <div class="d-flex col-12  justify-content-end">
+              <button class="btn btn-primary p-2 d-none" id="btnActivarEdicion">Activar edicion</button>
             </div>
+            <h1 class="text-dark text-center ">CONFIGURACIONES</h1>
+            <form class="row mt-2 mb-2" id="formulario_voluntarios">
+              <div class="col-sm-6 mt-2">
+                <label class="mb-0 text-dark" for="nombre">Nombres :</label>
+                <input type="text" class="form-control bg-light" name="nombre" id="nombre"
+                  placeholder="Escriba los nombre">
+              </div>
 
-            
+              <div class="col-sm-6 mt-2">
+                <label class="mb-0 text-dark" for="apellidos">Apellidos :</label>
+                <input type="text" class="form-control bg-light" name="apellidos" id="apellidos"
+                  placeholder="Escriba los apellidos">
+              </div>
+
+
+              <div class="col-sm-6 mt-2">
+                <label class="mb-0 text-dark" for="imagen" name="archivo">Imagen: </label>
+                <input type="file" id="imgUsuario" name="img" class="form-control bg-light" id="img"
+                  placeholder="Link de imagen">
+              </div>
+
+
+              <div class="col-12">
+                <button id="btnCambiarPassword" class="btn btn-primary mt-4 text-whitel " type="button">Cambiar
+                  Contraseña</button>
+              </div>
+              <div class="row col-12  d-none" id="camposContraseña">
+                <div class="col-sm-6 mt-2">
+                  <label class="mb-0 text-dark" name="nombres" for="nombre">Contraseña actual :</label>
+                  <input type="password" class="form-control bg-light" id="password" name="password"
+                    placeholder="Contraseña actual">
+                </div>
+                <div class="col-sm-6 mt-2 ">
+                  <label class="mb-0 text-dark">Nueva contraseña :</label>
+                  <input type="password" class="form-control bg-light" id="newPassword" name="newPassword"
+                    placeholder="Contraseña nueva">
+                </div>
+              </div>
+
+              <div class="col-12 mt-2 mb-2 d-flex justify-content-end">
+                <button type="submit" class="btn btn-primary p-2 px-3 mt-4 mx-3" id="btnAgregar">Actualizar</button>
+                <button type="reset" class="btn btn-outline-primary p-2 px-3 mt-4" id="btnLimpiar">Limpiar</button>
+              </div>
+            </form>
+
+
+
+
+
           </div>
+
+
         </div>
-        <!-- content-wrapper ends -->
-        <!-- partial:../../partials/_footer.html -->
-        <!-- partial -->
       </div>
-      <!-- main-panel ends -->
+      <!-- content-wrapper ends -->
+      <!-- partial:../../partials/_footer.html -->
+      <!-- partial -->
     </div>
-    <!-- page-body-wrapper ends -->
-    </div>
-    <!-- container-scroller -->
-    <!-- plugins:js -->
-    <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
-    <script src="../../assets/js/off-canvas.js"></script>
-    <script src="../../assets/js/hoverable-collapse.js"></script>
-    <script src="../../assets/js/misc.js"></script>
-    <script src="../../assets/js/settings.js"></script>
-    <script src="../../assets/js/todolist.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js" integrity="sha512-xIPqqrfvUAc/Cspuj7Bq0UtHNo/5qkdyngx6Vwt+tmbvTLDszzXM0G6c91LXmGrRx8KEPulT+AfOOez+TeVylg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="../../helpers/validarSession.js"></script>
-    <script src="./assets/js/pages/add.js"></script>
-    <script src="./helpers/cargarDatosUsuario.js"></script>
-  </body>
+    <!-- main-panel ends -->
+  </div>
+  <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="../../assets/js/off-canvas.js"></script>
+  <script src="../../assets/js/hoverable-collapse.js"></script>
+  <script src="../../assets/js/misc.js"></script>
+  <script src="../../assets/js/settings.js"></script>
+  <script src="../../assets/js/todolist.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"
+    integrity="sha512-xIPqqrfvUAc/Cspuj7Bq0UtHNo/5qkdyngx6Vwt+tmbvTLDszzXM0G6c91LXmGrRx8KEPulT+AfOOez+TeVylg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="../../helpers/validarSession.js"></script>
+  <script src="./helpers/cargarDatosUsuario.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"
+    integrity="sha512-xIPqqrfvUAc/Cspuj7Bq0UtHNo/5qkdyngx6Vwt+tmbvTLDszzXM0G6c91LXmGrRx8KEPulT+AfOOez+TeVylg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    const nombres = document.getElementById('nombre');
+    const imgUsuario = document.getElementById('imgUsuario');
+    const apellidos = document.getElementById('apellidos');
+    const camposContraseña = document.getElementById('camposContraseña');
+    const btnCambiarPassword = document.getElementById('btnCambiarPassword');
+    const formVoluntarios = document.getElementById('formulario_voluntarios');
+    const password = document.getElementById('password');
+    const btnLogout = document.getElementById('btnLogout');
+    
+    const newPassword = document.getElementById('newPassword');
+    btnLogout.addEventListener('click', ()=>
+    {
+      localStorage.removeItem('token');
+      window.location.href = '../../index.html';
+    })
+    btnCambiarPassword.addEventListener('click', () => {
+      camposContraseña.classList.toggle('d-none');
+    });
+ 
+    const cargarNombres=()=>{
+      const usuario = JSON.parse(localStorage.getItem('usuario'));
+      const {nombres:nom,apellidos:ap}=usuario.voluntario;
+      nombres.value=nom;
+      apellidos.value=ap;
+     
+  
+  
+    
+    }
+
+
+   
+
+
+
+    const actualizarConfiguraciones = async (e) => {
+      try {
+        e.preventDefault();
+
+        //validar si la imagen tiene un archivo
+        if (imgUsuario.files.length > 0 || nombres.value.length > 0 || apellidos.value.length > 0) {
+          await actualizarDatosVoluntario();
+        }
+
+        if (password.value.length > 0 && newPassword.value.length > 0) {
+        
+          await actualizarContraseña();
+        }
+
+
+
+      } catch (error) {
+        console.log(error)
+
+      }
+    }
+
+
+    const actualizarDatosVoluntario = async () => {
+
+try {
+  
+  const data = new FormData();
+      if (imgUsuario.files.length > 0) {
+        data.append('img', imgUsuario.files[0]);
+      }
+
+
+      if (nombres.value !== '') {
+        data.append('nombres', nombres.value);
+      }
+      if (apellidos.value !== '') {
+        data.append('apellidos', apellidos.value);
+      }
+
+      //obtener token
+      const token = localStorage.getItem('token');
+      const { voluntario } = JSON.parse(localStorage.getItem('usuario'));
+      console.log(voluntario._id)
+      const config = {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          'x-token': token
+        }
+      }
+
+      const response = await axios.put(`https://iee-uso.herokuapp.com/api/voluntarios/${voluntario._id}`, data, config);
+      if (response.data.status) {
+        await Swal.fire({
+          icon: 'success',
+          title: 'Datos actualizados',
+          text: response.data.msg,
+          showConfirmButton: false,
+          timer: 1500
+        })
+      } else {
+        await Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: response.data.msg,
+        })
+      }
+} catch (error) {
+  mostrarError(error)
+}
+    }
+
+    const actualizarContraseña = async () => {
+      try {
+        const token = localStorage.getItem('token');
+        const data = new FormData();
+        data.append('password', password.value);
+        data.append('newPassword', newPassword.value);
+
+
+        const config = {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+            'x-token': token
+          }
+        }
+
+        const response = await axios.put("https://iee-uso.herokuapp.com/api/usuarios", data, config);
+        if (response.data.status) {
+          await Swal.fire({
+            icon: 'success',
+            title: 'Datos actualizados',
+            text: response.data.msg,
+            showConfirmButton: false,
+            timer: 1500
+          })
+        }
+
+
+      } catch (error) {
+        mostrarError(error);
+      }
+
+    }
+
+    const mostrarError=async(error)=>{
+      let mensajeError =
+          error?.response?.data?.mensaje || error?.response?.data?.msj || null;
+        if (!mensajeError) {
+          if (error?.response?.data?.errors) {
+            mensajeError = ""
+            error.response.data.errors.forEach(e => {
+              mensajeError += e.msg + '\n';
+            }
+            )
+
+          }
+        }
+        if (mensajeError) {
+          Swal.close();
+          await Swal.fire({
+            title: "Error",
+            text: mensajeError,
+            icon: "error",
+            showConfirmButton: false,
+            timer: 1500
+          });
+        }
+    }
+
+    formVoluntarios.addEventListener('submit', actualizarConfiguraciones)
+
+    cargarNombres();
+  </script>
+</body>
+
 </html>

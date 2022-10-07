@@ -3,11 +3,20 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Corona Admin</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>IEE USO</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="./assets/vendors/mdi/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="./assets/vendors/css/vendor.bundle.base.css" />
+    <link
+      rel="stylesheet"
+      href="./assets/vendors/mdi/css/materialdesignicons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets/vendors/css/vendor.bundle.base.css"
+    />
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <!-- End Plugin css for this page -->
@@ -31,11 +40,7 @@
             <div class="profile-desc">
               <div class="profile-pic">
                 <div class="count-indicator">
-                  <img
-                    class="img-xs rounded-circle img_usuario"
-                    src="https://w7.pngwing.com/pngs/841/727/png-transparent-computer-icons-user-profile-synonyms-and-antonyms-android-android-computer-wallpaper-monochrome-sphere.png"
-                    alt=""
-                  />
+                  <img class="img-xs rounded-circle img_usuario "  src="https://w7.pngwing.com/pngs/841/727/png-transparent-computer-icons-user-profile-synonyms-and-antonyms-android-android-computer-wallpaper-monochrome-sphere.png" alt="">
                   <span class="count bg-success"></span>
                 </div>
                 <div class="profile-name">
@@ -59,7 +64,7 @@
                 <a href="#" class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
                     <div class="preview-icon bg-dark rounded-circle">
-                      <i class="mdi mdi-onepassword text-info"></i>
+                      <i class="mdi mdi-onepassword  text-info"></i>
                     </div>
                   </div>
                   <div class="preview-item-content">
@@ -101,11 +106,13 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="list.html">VER VOLUNTARIO</a></li>
-                <li class="nav-item"><a class="nav-link" href="add.html">AGREGAR VOLUNTARIO</a></li>
+                <li class="nav-item"> <a class="nav-link" href="list.html">VER VOLUNTARIO</a></li>
+                <li class="nav-item"> <a class="nav-link" href="add.html">AGREGAR VOLUNTARIO</a></li>
+              
               </ul>
             </div>
           </li>
+
 
           <li class="nav-item menu-items">
             <a class="nav-link" data-toggle="collapse" href="#voluntarios" aria-expanded="false" aria-controls="ui-basic">
@@ -117,11 +124,13 @@
             </a>
             <div class="collapse" id="voluntarios">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="listUsers.html">VER USUARIOS</a></li>
-                <li class="nav-item"><a class="nav-link" href="addUser.html">AGREGAR USUARIOS</a></li>
+                <li class="nav-item"> <a class="nav-link" href="listUsers.html">VER USUARIOS</a></li>
+                <li class="nav-item"> <a class="nav-link" href="addUser.html">AGREGAR USUARIOS</a></li>
+              
               </ul>
             </div>
           </li>
+
 
           <li class="nav-item menu-items">
             <a class="nav-link" data-toggle="collapse" href="#PROYECTOS" aria-expanded="false" aria-controls="ui-basic">
@@ -133,11 +142,13 @@
             </a>
             <div class="collapse" id="PROYECTOS">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="listProjects.html">VER EVENTOS</a></li>
-                <li class="nav-item"><a class="nav-link" href="addProject.html">AGREGAR EVENTOS</a></li>
+                <li class="nav-item"> <a class="nav-link" href="listProjects.html">VER EVENTOS</a></li>
+                <li class="nav-item"> <a class="nav-link" href="addProject.html">AGREGAR EVENTOS</a></li>
+              
               </ul>
             </div>
           </li>
+         
         </ul>
       </nav>
       <!-- partial -->
@@ -226,43 +237,46 @@
         </nav>
         <!-- partial -->
         <div class="main-panel bg-white">
-          <div class="row bg-white">
-            <div class="col-lg-12 grid-margin stretch-card">
-              <div class="card bg-white">
-                <div class="card-body">
-                  <h4 class="card-title text-dark">Tabla de voluntarios</h4>
-                  <p class="card-description"><code></code></p>
-                  <div class="table-responsive">
-                    <table class="table table-ligth text-dark border">
-                      <thead>
-                        <tr class="text-dark">
-                          <th>ID</th>
-                          <th>Nombre</th>
-                          <th>Apellido</th>
-                          <th>Genero</th>
-                          <th>Correo electronico</th>
-                          <th>Telefono</th>
-                          <th>No Miembro</th>
-                          <th>Grado</th>
-                          <th>capitulos</th>
-                          <th style="text-align: center">Botones</th>
-                        </tr>
-                      </thead>
-                      <tbody id="tabla_voluntarios"></tbody>
-                    </table>
-                  </div>
-                </div>
+          <div class="content-wrapper bg-white  w-100 col-12">
+          
+            <div class="container shadow-lg py-4">
+              <div class="d-flex col-12  justify-content-end">
+                <button class="btn btn-primary p-2 d-none" id="btnActivarEdicion">Activar edicion</button>
               </div>
+              <h1 class="text-dark text-center ">FORMULARIO USUARIO</h1>
+              <form class="row mt-2 mb-2" id="formulario_usuario" autocomplete="off">
+                <div class="col-sm-6 mt-2">
+                  <label class="mb-0 text-dark" name="usuario" for="nombre">Usuario:</label>
+                  <input type="text" class="form-control bg-light" id="usuario" placeholder="Escriba el usuario" required>
+                </div>
+                <div class="col-sm-6 mt-2">
+                  <label class="mb-0 text-dark" name="noMiembro" for="apellido">Numero de miembro:</label>
+                  <input type="text" class="form-control bg-light" id="noMiembro" placeholder="Escriba el numero de miembro del voluntario" required>
+                </div>
+                <div class="col-sm-6 mt-2">
+                  <label class="mb-0 text-dark" name="password" for="password">Contraseña:</label>
+                  <input type="password" class="form-control bg-light" id="password" placeholder="Escriba la contraseña" required>
+                </div>
+                <div class="col-12 col-sm-6 mt-2">
+                  <label class="mb-0 text-dark" for="password2">Contraseña:</label>
+                  <input type="password" class="form-control bg-light" id="password2" placeholder="Repita la contraseña">
+                </div>
+                
+                <div class="col-12 mt-2 mb-2 d-flex justify-content-end">
+                  <button type="submit" class="btn btn-primary p-2 px-3 mt-4 mx-3" id="btnAgregar">Agregar</button>
+                  <button type="reset" class="btn btn-outline-primary p-2 px-3 mt-4" id="btnLimpiar">Limpiar</button>
+                </div>
+              </form>
             </div>
           </div>
-          <!-- content-wrapper ends -->
-          <!-- partial:./partials/_footer.html -->
-
-          <!-- partial -->
         </div>
-        <!-- main-panel ends -->
+        <!-- content-wrapper ends -->
+        <!-- partial:./partials/_footer.html -->
+        <!-- partial -->
       </div>
-      <!-- page-body-wrapper ends -->
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
@@ -276,18 +290,10 @@
     <script src="./assets/js/misc.js"></script>
     <script src="./assets/js/settings.js"></script>
     <script src="./assets/js/todolist.js"></script>
-    <!-- endinject -->
-    <!-- Custom js for this page -->
-    <!-- End custom js for this page -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"
-      integrity="sha512-xIPqqrfvUAc/Cspuj7Bq0UtHNo/5qkdyngx6Vwt+tmbvTLDszzXM0G6c91LXmGrRx8KEPulT+AfOOez+TeVylg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js" integrity="sha512-xIPqqrfvUAc/Cspuj7Bq0UtHNo/5qkdyngx6Vwt+tmbvTLDszzXM0G6c91LXmGrRx8KEPulT+AfOOez+TeVylg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./helpers/validarSession.js"></script>
-    <script src="./assets/js//pages/list.js"></script>
+    <script src="./assets/js/pages/addUser.js"></script>
     <script src="./helpers/cargarDatosUsuario.js"></script>
   </body>
 </html>

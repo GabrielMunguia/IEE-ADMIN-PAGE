@@ -1,4 +1,4 @@
-const tabla_voluntarios = document.getElementById("tabla_voluntarios");
+const tabla_eventos = document.getElementById("tabla_eventos");
 
 const btnLogout = document.querySelector('#btnLogout');
 document.addEventListener("DOMContentLoaded", function () {
@@ -12,37 +12,35 @@ window.location.href = url;
 });
 const cargar_voluntarios = async () => {
   const resp = await axios.get(
-    "https://iee-uso.herokuapp.com/api/voluntarios"
+    "https://iee-uso.herokuapp.com/api/proyects"
   );
   const data = resp.data;
-  const voluntarios = data.payload.voluntarios;
+ 
+  const proyectos = data.payload.proyectos;
   let html = "";
 
-  voluntarios.map((v, i) => {
+  proyectos.map((p, i) => {
     html =
       html +
       `
           <tr >
                     <td class="text-dark"> ${i} </td>
-                    <td class="text-dark"> ${v.nombres} </td>
-                    <td class="text-dark"> ${v.apellidos} </td>
-                    <td class="text-dark"> ${v.genero} </td>
-                    <td class="text-dark"> ${v.correo} </td>
-                    <td class="text-dark">${v.telefono ?? "-"} </td>
-                    <td class="text-dark">${v.noMiembro ?? "-"} </td>
-                    <td class="text-dark"> ${v.grado?.grado??"-"} </td>
-                    <td class="text-dark"> ${v.capitulo.nombre} </td>
+                    <td class="text-dark"> ${p.titulo} </td>
+                    <td class="text-dark"> ${p.subTitulo} </td>
+                    <td class="text-dark"> ${p.descripcion} </td>
+                    <td class="text-dark"> ${p.sitio} </td>
+                    <td class="text-dark"> ${p.fecha} </td>
                     <td class="text-center">
-                        <a  href="./add.html?id=${v._id}"  class="btn btn-warning mr-2 ">Ver mas</a>
+                        <a  href="./addProject.html?id=${p.uid}"  class="btn btn-warning mr-2 ">Ver mas</a>
                         <button id=${
-                          v._id
+                          p._id
                         } type="submit" class="btn btn-danger mr-2 btnEliminar">Eliminar</button>
                     </td>
                     
                   </tr>
           `;
   });
-  tabla_voluntarios.innerHTML = html;
+  tabla_eventos.innerHTML = html;
 
   const btnEliminar = document.querySelectorAll(".btnEliminar");
   btnEliminar.forEach((btn) => {
@@ -54,12 +52,12 @@ const eliminarVoluntario = async (e) => {
   const id = e.target.id;
   //sweet alert para confirmar la eliminacion del voluntario
   const seEliminara = await Swal.fire({
-    title: "¿Estas seguro de eliminarlo?",
+    title: "Do you want to save the changes?",
     titleColor: "red",
     showDenyButton: true,
-    showCancelButton: false,
-    confirmButtonText: "Eliminar",
-    denyButtonText: `Cancelar`,
+    showCancelButton: true,
+    confirmButtonText: "Save",
+    denyButtonText: `Don't save`,
   });
 
   if (seEliminara.isConfirmed) {

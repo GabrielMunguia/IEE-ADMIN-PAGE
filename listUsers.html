@@ -3,11 +3,20 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <title>Corona Admin</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="./assets/vendors/mdi/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="./assets/vendors/css/vendor.bundle.base.css" />
+    <link
+      rel="stylesheet"
+      href="./assets/vendors/mdi/css/materialdesignicons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets/vendors/css/vendor.bundle.base.css"
+    />
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <!-- End Plugin css for this page -->
@@ -31,11 +40,7 @@
             <div class="profile-desc">
               <div class="profile-pic">
                 <div class="count-indicator">
-                  <img
-                    class="img-xs rounded-circle img_usuario"
-                    src="https://w7.pngwing.com/pngs/841/727/png-transparent-computer-icons-user-profile-synonyms-and-antonyms-android-android-computer-wallpaper-monochrome-sphere.png"
-                    alt=""
-                  />
+                  <img class="img-xs rounded-circle img_usuario "  src="https://w7.pngwing.com/pngs/841/727/png-transparent-computer-icons-user-profile-synonyms-and-antonyms-android-android-computer-wallpaper-monochrome-sphere.png" alt="">
                   <span class="count bg-success"></span>
                 </div>
                 <div class="profile-name">
@@ -59,7 +64,7 @@
                 <a href="#" class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
                     <div class="preview-icon bg-dark rounded-circle">
-                      <i class="mdi mdi-onepassword text-info"></i>
+                      <i class="mdi mdi-onepassword  text-info"></i>
                     </div>
                   </div>
                   <div class="preview-item-content">
@@ -101,11 +106,13 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="list.html">VER VOLUNTARIO</a></li>
-                <li class="nav-item"><a class="nav-link" href="add.html">AGREGAR VOLUNTARIO</a></li>
+                <li class="nav-item"> <a class="nav-link" href="list.html">VER VOLUNTARIO</a></li>
+                <li class="nav-item"> <a class="nav-link" href="add.html">AGREGAR VOLUNTARIO</a></li>
+              
               </ul>
             </div>
           </li>
+
 
           <li class="nav-item menu-items">
             <a class="nav-link" data-toggle="collapse" href="#voluntarios" aria-expanded="false" aria-controls="ui-basic">
@@ -117,11 +124,13 @@
             </a>
             <div class="collapse" id="voluntarios">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="listUsers.html">VER USUARIOS</a></li>
-                <li class="nav-item"><a class="nav-link" href="addUser.html">AGREGAR USUARIOS</a></li>
+                <li class="nav-item"> <a class="nav-link" href="listUsers.html">VER USUARIOS</a></li>
+                <li class="nav-item"> <a class="nav-link" href="addUser.html">AGREGAR USUARIOS</a></li>
+              
               </ul>
             </div>
           </li>
+
 
           <li class="nav-item menu-items">
             <a class="nav-link" data-toggle="collapse" href="#PROYECTOS" aria-expanded="false" aria-controls="ui-basic">
@@ -133,11 +142,13 @@
             </a>
             <div class="collapse" id="PROYECTOS">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="listProjects.html">VER EVENTOS</a></li>
-                <li class="nav-item"><a class="nav-link" href="addProject.html">AGREGAR EVENTOS</a></li>
+                <li class="nav-item"> <a class="nav-link" href="listProjects.html">VER EVENTOS</a></li>
+                <li class="nav-item"> <a class="nav-link" href="addProject.html">AGREGAR EVENTOS</a></li>
+              
               </ul>
             </div>
           </li>
+         
         </ul>
       </nav>
       <!-- partial -->
@@ -237,15 +248,11 @@
                       <thead>
                         <tr class="text-dark">
                           <th>ID</th>
+                          <th>Usuario</th>
                           <th>Nombre</th>
-                          <th>Apellido</th>
-                          <th>Genero</th>
-                          <th>Correo electronico</th>
-                          <th>Telefono</th>
-                          <th>No Miembro</th>
-                          <th>Grado</th>
-                          <th>capitulos</th>
-                          <th style="text-align: center">Botones</th>
+                          <th>No.Miembro</th>
+                          <th>Acciones</th>
+                         
                         </tr>
                       </thead>
                       <tbody id="tabla_voluntarios"></tbody>
@@ -287,7 +294,7 @@
     ></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./helpers/validarSession.js"></script>
-    <script src="./assets/js//pages/list.js"></script>
+    <script src="./assets/js//pages/listUser.js"> </script>
     <script src="./helpers/cargarDatosUsuario.js"></script>
   </body>
 </html>

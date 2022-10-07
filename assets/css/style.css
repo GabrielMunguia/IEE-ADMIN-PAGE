@@ -9784,7 +9784,7 @@ input[type="button"].btn-block {
   padding: 0.5rem 0;
   margin: 0.125rem 0 0;
   font-size: 1rem;
-  color: black;
+  color: rgb(255, 255, 255);
   text-align: left;
   list-style: none;
   background-color: #191c24;
@@ -9921,7 +9921,7 @@ input[type="button"].btn-block {
   padding: 0.25rem 1.5rem;
   clear: both;
   font-weight: 400;
-  color: black;
+  color: rgb(255, 255, 255);
   text-align: inherit;
   white-space: nowrap;
   background-color: transparent;
@@ -20903,7 +20903,7 @@ div.tagsinput {
           height: auto;
           border-top: 0; }
           .sidebar .nav.sub-menu .nav-item .nav-link.active {
-            color: black;
+            color: white;
             background: transparent; }
           .sidebar .nav.sub-menu .nav-item .nav-link:hover {
             color: white; }

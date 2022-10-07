@@ -1,20 +1,24 @@
 const selectCapitulos = document.getElementById("capitulos");
 const selectGrados = document.getElementById("grados");
+const selectRango = document.getElementById("rango");
 const formulario_voluntarios = document.getElementById("formulario_voluntarios");
 const btnActivarEdicion = document.getElementById("btnActivarEdicion");
 const btnAgregar = document.getElementById("btnAgregar");
 const btnLimpiar = document.getElementById("btnLimpiar");
+const divRango = document.getElementById("divRango");
 let ESTADO_EDICION=false;
 let telefonoOriginal = 0;
 let correoOriginal = 0;
 let codigoOriginal = 0;
 let idVoluntario = null;
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const sesionValida=validarSession();
- 
   if(!sesionValida){
     window.location.href = "./login.html";
   }
+  selectGrados.addEventListener('change',onChangeRango);
   getCapitulos();
   getGrados();
   validarEditar();
@@ -51,8 +55,11 @@ const getGrados = async () => {
   const response = await axios.get("https://iee-uso.herokuapp.com/api/grados");
   const data = await response.data;
   const grados = data.payload.grados;
-  console.log(grados);
-  grados.forEach((grado) => {
+ 
+  grados.forEach((grado,i) => {
+    if(grado.grado=="Directivo"&& i==0){
+        divRango.classList.remove('d-none');
+    }
     const option = document.createElement("option");
     option.value = grado._id;
     option.innerHTML = grado.grado;
@@ -86,6 +93,7 @@ const handleSubmit = async (e) => {
     formData.append("genero", genero);
     formData.append("link", link);
     formData.append("archivo", imagen);
+    formData.append("rango", selectRango.value);
     if (!idVoluntario) {
       formData.append("correo", correo);
       formData.append("telefono", telefono);
@@ -109,7 +117,7 @@ const handleSubmit = async (e) => {
     if (idVoluntario) {
       try {
         response = await axios.put(
-          `https://iee-uso.herokuapp.com/api/voluntarios/${idVoluntario}`,
+          `http://localhost:8080/api/voluntarios/${idVoluntario}`,
           formData,
           {
             headers: {
@@ -214,6 +222,12 @@ const validarEditar = async () => {
     telefonoOriginal = voluntario.telefono;
     correoOriginal = voluntario.correo;
     codigoOriginal = voluntario.noMiembro;
+    if(voluntario?.rango){
+   
+      selectRango.selectedIndex = [...selectRango.options].findIndex(option => option.text === voluntario.rango);
+
+    }
+  
     //recorrer las options del select grados
     for (let i = 0; i < selectGrados.options.length; i++) {
       if (selectGrados.options[i].value == voluntario.grado._id) {
@@ -242,6 +256,17 @@ const handleEdicion = ()=>{
         
     }
     ESTADO_EDICION = !ESTADO_EDICION;
+}
+
+
+const onChangeRango=(e)=>{
+  const value= e.target.options[e.target.selectedIndex].text;
+    if(value=="Directivo"){
+        divRango.classList.remove('d-none');
+    }else{
+        divRango.classList.add('d-none');
+        
+    }
 }
 
 btnActivarEdicion.addEventListener("click", handleEdicion);
